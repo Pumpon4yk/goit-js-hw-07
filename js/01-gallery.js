@@ -9,7 +9,7 @@ galleryRefs.insertAdjacentHTML("beforeend", gallery)
 galleryRefs.addEventListener("click", onModalImg);
 
 function createGallery(arrey) {
-    return arrey.map(({ preview, original }) =>
+    return arrey.map(({ preview, original, description}) =>
         `
     <div class="gallery__item">
     <a class="gallery__link" href="${original}">
@@ -17,7 +17,7 @@ function createGallery(arrey) {
     class="gallery__image"
     src="${preview}"
     data-source="${original}"
-    alt="Image description"
+    alt="${description}"
     onclick="return false;"
     />
     </a>
