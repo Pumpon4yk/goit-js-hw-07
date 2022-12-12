@@ -46,8 +46,8 @@ function onModalImg(evt) {
     if (evt.code !== "Escape") {
         return;
     }
-        instance.close();
     
-        return document.removeEventListener("keydown", closeModal)
+    return instance.close(document.removeEventListener("keydown", closeModal));
     };
 }
+
