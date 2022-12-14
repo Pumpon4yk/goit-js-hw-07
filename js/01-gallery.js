@@ -35,11 +35,10 @@ function onModalImg(evt) {
     <img src="${evt.target.dataset.source}" 
     width="800" 
     height="600">
-    `);
+    `, {onShow: (instance) => {document.addEventListener("keydown", closeModal)}, 
+    onClose: (instance) => {document.removeEventListener("keydown", closeModal)}});
 
     instance.show();
-
-    document.addEventListener("keydown", closeModal)
 
     function closeModal(evt){
     
@@ -47,7 +46,6 @@ function onModalImg(evt) {
         return;
     }
     
-    return instance.close(document.removeEventListener("keydown", closeModal));
+    return instance.close();
     };
 }
-
